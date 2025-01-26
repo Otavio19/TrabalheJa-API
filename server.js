@@ -3,11 +3,18 @@ const fastify = require("fastify")({ logger: true });
 const userRoutes = require("./routes/userRoutes");
 const AuthRoutes = require("./routes/authRoutes")
 const testRoutes = require('./routes/testRoute');
+const vagasRoutes = require("./routes/vagasRoutes");
 
 // Registrar rotas
 fastify.register(userRoutes, { prefix: "/api" });
 fastify.register(AuthRoutes, { prefix: "/api" });
+fastify.register(vagasRoutes, { prefix: "/api" });
 fastify.register(testRoutes);
+
+module.exports = async (req, res) => {
+  await fastify.ready(); // Garante que o Fastify esteja pronto para lidar com requisições
+  fastify.server.emit("request", req, res); // Envia a requisição para o Fastify
+};
 
 // Inicializar servidor
 
