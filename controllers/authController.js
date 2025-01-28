@@ -57,7 +57,7 @@ const authController = {
                 return reply.status(401).send({ error: "Senha incorreta." });
             }
 
-            const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            const token = jwt.sign({ id: user.id, email: user.email,  nivel: user.nivel}, process.env.JWT_SECRET, { expiresIn: '1h' });
 
             reply.send({
                 message: "Login bem-sucedido.",
