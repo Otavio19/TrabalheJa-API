@@ -1,4 +1,6 @@
-const { neon } = require("@neondatabase/serverless");
+import { neon } from "@neondatabase/serverless";
+//const sql = neon(process.env.DATABASE_URL);
+
 const sql = neon(process.env.DATABASE_URL);
 
 const userRepository = {
@@ -36,4 +38,4 @@ const userRepository = {
   },
 };
 
-module.exports = userRepository;
+export default userRepository

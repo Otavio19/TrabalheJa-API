@@ -1,6 +1,7 @@
-const { neon } = require("@neondatabase/serverless");
+import { neon } from "@neondatabase/serverless"
+
 const sql = neon(process.env.DATABASE_URL);
-const { randomUUID } = require("crypto");
+import { randomUUID } from "crypto";
 
 const authRepository = {
     async findByEmail(email) {
@@ -20,4 +21,4 @@ const authRepository = {
 
 };
 
-module.exports = authRepository;
+export default authRepository

@@ -1,4 +1,4 @@
-const vagasRepository = require("../repositories/vagaRepository");
+import vagasRepository from "../repositories/vagaRepository.js";
 
 const vagasController = {
   async getAll(req, reply) {
@@ -76,4 +76,4 @@ const vagasController = {
   },
 };
 
-module.exports = vagasController;
+export default vagasController;

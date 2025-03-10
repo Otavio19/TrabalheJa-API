@@ -1,5 +1,5 @@
-const userRepository = require("../repositories/userRepository");
-const bcrypt = require("bcrypt");
+import userRepository from "../repositories/userRepository.js";
+import bcrypt from "bcrypt"
 
 const userController = {
   async getAllUsers(req, reply) {
@@ -15,6 +15,7 @@ const userController = {
     try {
       const { id } = req.params;
       const user = await userRepository.findById(id);
+      console.log(user)
       if (!user.length) {
         return reply.status(404).send({ error: "Usuário não encontrado." });
       }
@@ -79,4 +80,4 @@ const userController = {
   },
 };
 
-module.exports = userController;
+export default userController;

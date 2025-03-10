@@ -1,14 +1,26 @@
 {
+  "name": "trabalheja-api",
+  "version": "1.0.0",
+  "description": "API para a plataforma Trabalhe JA",
+  "type": "module",
   "dependencies": {
+    "@fastify/swagger": "^9.4.2",
+    "@fastify/swagger-ui": "^5.2.2",
     "@neondatabase/serverless": "^0.10.4",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "fastify": "^5.2.1",
     "fastify-cors": "^6.0.0",
     "fastify-postgres": "^3.6.0",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.1"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
